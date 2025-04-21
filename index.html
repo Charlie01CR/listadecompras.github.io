@@ -2,51 +2,73 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Compras</title>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">🛒 Lista de Compras</h1>
-
-    <form id="formulario" class="space-y-6 overflow-y-auto max-h-[65vh] pr-4">
-      <!-- Abarrotes -->
-      <div>
-        <h2 class="text-xl font-semibold mb-2">Abarrotes</h2>
-        <label class="block"><input type="checkbox" value="Arroz"> Arroz</label>
-        <label class="block"><input type="checkbox" value="Frijoles"> Frijoles</label>
-        <label class="block"><input type="checkbox" value="Pasta"> Pasta</label>
-        <label class="block"><input type="checkbox" value="Café"> Café</label>
-        <label class="block"><input type="checkbox" value="Aceite vegetal"> Aceite vegetal</label>
-      </div>
-
-      <button type="button" onclick="generarLista()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Generar lista</button>
-    </form>
-
-    <div id="resultado" class="mt-6 hidden">
-      <h2 class="text-xl font-bold mb-2">🧾 Tu lista:</h2>
-      <ul id="lista" class="list-disc pl-6 text-lg"></ul>
-    </div>
+<body>
+  <h1>Selecciona los productos que deseas comprar:</h1>
+  <form id="shopping-list">
+    <label><input type="checkbox" name="product" value="Arroz"> Arroz</label><br>
+    <label><input type="checkbox" name="product" value="Frijoles"> Frijoles</label><br>
+    <label><input type="checkbox" name="product" value="Azúcar"> Azúcar</label><br>
+    <label><input type="checkbox" name="product" value="Sal"> Sal</label><br>
+    <label><input type="checkbox" name="product" value="Harina de maíz"> Harina de maíz</label><br>
+    <label><input type="checkbox" name="product" value="Harina de trigo"> Harina de trigo</label><br>
+    <label><input type="checkbox" name="product" value="Pasta"> Pasta</label><br>
+    <label><input type="checkbox" name="product" value="Café"> Café</label><br>
+    <label><input type="checkbox" name="product" value="Aceite vegetal"> Aceite vegetal</label><br>
+    <label><input type="checkbox" name="product" value="Leche"> Leche</label><br>
+    <label><input type="checkbox" name="product" value="Queso"> Queso</label><br>
+    <label><input type="checkbox" name="product" value="Yogur"> Yogur</label><br>
+    <label><input type="checkbox" name="product" value="Mantequilla"> Mantequilla</label><br>
+    <label><input type="checkbox" name="product" value="Huevos"> Huevos</label><br>
+    <label><input type="checkbox" name="product" value="Pollo"> Pollo</label><br>
+    <label><input type="checkbox" name="product" value="Carne de res"> Carne de res</label><br>
+    <label><input type="checkbox" name="product" value="Cerdo"> Cerdo</label><br>
+    <label><input type="checkbox" name="product" value="Pescado"> Pescado</label><br>
+    <label><input type="checkbox" name="product" value="Embutidos"> Embutidos</label><br>
+    <label><input type="checkbox" name="product" value="Manzanas"> Manzanas</label><br>
+    <label><input type="checkbox" name="product" value="Plátanos"> Plátanos</label><br>
+    <label><input type="checkbox" name="product" value="Naranjas"> Naranjas</label><br>
+    <label><input type="checkbox" name="product" value="Tomates"> Tomates</label><br>
+    <label><input type="checkbox" name="product" value="Lechuga"> Lechuga</label><br>
+    <label><input type="checkbox" name="product" value="Zanahorias"> Zanahorias</label><br>
+    <label><input type="checkbox" name="product" value="Pan blanco"> Pan blanco</label><br>
+    <label><input type="checkbox" name="product" value="Pan integral"> Pan integral</label><br>
+    <label><input type="checkbox" name="product" value="Tortillas de maíz"> Tortillas de maíz</label><br>
+    <label><input type="checkbox" name="product" value="Tortillas de trigo"> Tortillas de trigo</label><br>
+    <label><input type="checkbox" name="product" value="Agua embotellada"> Agua embotellada</label><br>
+    <label><input type="checkbox" name="product" value="Jugos"> Jugos</label><br>
+    <label><input type="checkbox" name="product" value="Refrescos"> Refrescos</label><br>
+    <label><input type="checkbox" name="product" value="Té"> Té</label><br>
+    <label><input type="checkbox" name="product" value="Verduras congeladas"> Verduras congeladas</label><br>
+    <label><input type="checkbox" name="product" value="Helados"> Helados</label><br>
+    <label><input type="checkbox" name="product" value="Comidas preparadas congeladas"> Comidas preparadas congeladas</label><br>
+    <label><input type="checkbox" name="product" value="Jabón"> Jabón</label><br>
+    <label><input type="checkbox" name="product" value="Champú"> Champú</label><br>
+    <label><input type="checkbox" name="product" value="Pasta dental"> Pasta dental</label><br>
+    <label><input type="checkbox" name="product" value="Desodorante"> Desodorante</label><br>
+    <label><input type="checkbox" name="product" value="Papel higiénico"> Papel higiénico</label><br>
+    <label><input type="checkbox" name="product" value="Detergente"> Detergente</label><br>
+    <label><input type="checkbox" name="product" value="Suavizante"> Suavizante</label><br>
+    <label><input type="checkbox" name="product" value="Desinfectante"> Desinfectante</label><br>
+    <label><input type="checkbox" name="product" value="Cloro"> Cloro</label><br>
+    <label><input type="checkbox" name="product" value="Esponjas"> Esponjas</label><br>
+    <label><input type="checkbox" name="product" value="Alimento para perros"> Alimento para perros</label><br>
+    <label><input type="checkbox" name="product" value="Alimento para gatos"> Alimento para gatos</label><br>
+    <label><input type="checkbox" name="product" value="Arena para gatos"> Arena para gatos</label><br>
+    <button type="submit">Generar Lista</button>
+  </form>
+  <div id="selected-products">
+    <h2>Productos Seleccionados:</h2>
+    <ul id="product-list"></ul>
   </div>
 
   <script>
-    function generarLista() {
-      const checkboxes = document.querySelectorAll('#formulario input[type=checkbox]');
-      const lista = document.getElementById('lista');
-      const resultado = document.getElementById('resultado');
-      lista.innerHTML = '';
+    document.getElementById('shopping-list').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const selected = [];
+      document.querySelectorAll('input[name="product"]:checked').forEach((checkbox) => {
+        selected.push(checkbox.value);
 
-      checkboxes.forEach(cb => {
-        if (cb.checked) {
-          const li = document.createElement('li');
-          li.textContent = cb.value;
-          lista.appendChild(li);
-        }
-      });
-
-      resultado.classList.remove('hidden');
-    }
-  </script>
-</body>
-</html>
+::contentReference[oaicite:0]{index=0}
+ 
