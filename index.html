@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">🛒 Lista de Compras</h1>
+
+    <form id="formulario" class="space-y-6 overflow-y-auto max-h-[65vh] pr-4">
+      <!-- Abarrotes -->
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Abarrotes</h2>
+        <label class="block"><input type="checkbox" value="Arroz"> Arroz</label>
+        <label class="block"><input type="checkbox" value="Frijoles"> Frijoles</label>
+        <label class="block"><input type="checkbox" value="Pasta"> Pasta</label>
+        <label class="block"><input type="checkbox" value="Café"> Café</label>
+        <label class="block"><input type="checkbox" value="Aceite vegetal"> Aceite vegetal</label>
+      </div>
+
+      <button type="button" onclick="generarLista()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Generar lista</button>
+    </form>
+
+    <div id="resultado" class="mt-6 hidden">
+      <h2 class="text-xl font-bold mb-2">🧾 Tu lista:</h2>
+      <ul id="lista" class="list-disc pl-6 text-lg"></ul>
+    </div>
+  </div>
+
+  <script>
+    function generarLista() {
+      const checkboxes = document.querySelectorAll('#formulario input[type=checkbox]');
+      const lista = document.getElementById('lista');
+      const resultado = document.getElementById('resultado');
+      lista.innerHTML = '';
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          const li = document.createElement('li');
+          li.textContent = cb.value;
+          lista.appendChild(li);
+        }
+      });
+
+      resultado.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
